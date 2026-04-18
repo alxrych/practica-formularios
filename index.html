@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Ciclismo - Registro y Denuncia de Robo</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <main>
+        <h1>Club de Ciclismo</h1>
+
+        <!-- FORMULARIO 1: REGISTRARSE EN EL CLUB -->
+        <form action="#" method="post" class="formulario">
+            <fieldset>
+                <legend>Datos personales</legend>
+
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autofocus tabindex="1"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" tabindex="2"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" placeholder="18" min="0" max="120" tabindex="3">
+                </div>
+
+                <div class="campo radio-group">
+                    <label>Sexo:</label>
+                    <div class="opciones-radio">
+                        <label><input type="radio" name="sexo" value="masculino" tabindex="4"> Masculino</label>
+                        <label><input type="radio" name="sexo" value="femenino" tabindex="5"> Femenino</label>
+                        <label><input type="radio" name="sexo" value="otro" tabindex="6"> Otro</label>
+                    </div>
+                </div>
+
+                <div class="campo checkbox">
+                    <label for="me_siento">Me siento del club:</label>
+                    <input type="checkbox" id="me_siento" name="me_siento" value="si" tabindex="7">
+                </div>
+
+                <div class="campo">
+                    <label for="sobre_ti">Escribe algo sobre ti:</label>
+                    <textarea id="sobre_ti" name="sobre_ti" rows="3"
+                        placeholder="Cuéntanos tu experiencia, gustos o motivación..." tabindex="8"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de contacto</legend>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" tabindex="9" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" tabindex="10">
+                </div>
+            </fieldset>
+
+            <div class="botones">
+                <button type="reset" tabindex="11">Limpiar formulario</button>
+                <button type="submit" tabindex="12">Registrarse</button>
+            </div>
+        </form>
+
+        <!-- FORMULARIO 2: REGISTRAR EL ROBO DE LA BICICLETA -->
+        <form action="#" method="post" class="formulario">
+            <fieldset>
+                <legend>Denuncia de robo de bicicleta</legend>
+
+                <div class="campo">
+                    <label for="dia_robo">Día del robo:</label>
+                    <input type="date" id="dia_robo" name="dia_robo" tabindex="13" required>
+                </div>
+
+                <div class="campo">
+                    <label for="hora_robo">Hora del robo:</label>
+                    <input type="time" id="hora_robo" name="hora_robo" tabindex="14">
+                </div>
+
+                <div class="campo">
+                    <label for="color_bici">Color de la bicicleta:</label>
+                    <input type="color" id="color_bici" name="color_bici" value="#3366cc" tabindex="15">
+                </div>
+
+                <div class="campo rango">
+                    <label for="precio">Rango de precio (€):</label>
+                    <div class="control-rango">
+                        <input type="range" id="precio" name="precio" min="0" max="5000" step="50" value="1000"
+                            tabindex="16">
+                        <output id="valor_precio">1000</output> €
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="tipo_bici">Tipo de bicicleta:</label>
+                    <select id="tipo_bici" name="tipo_bici" tabindex="17">
+                        <optgroup label="Urbana">
+                            <option>Bicicleta Clásica</option>
+                            <option>Bicicleta Plegable</option>
+                            <option>Bicicleta Eléctrica</option>
+                            <option>Bicicleta Commuter</option>
+                        </optgroup>
+                        <optgroup label="Montaña">
+                            <option>Bicicletas de tipo Sport</option>
+                            <option>Bicicletas de tipo Trail o Hard Tail</option>
+                            <option>Bicicletas para XC o Cross Country</option>
+                        </optgroup>
+                        <optgroup label="Carreras">
+                            <option>Bicicletas Gran Fondo</option>
+                            <option>Bicicletas Racing</option>
+                            <option>Bicicletas Aero</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="accesorios">Accesorios (puede elegir varios):</label>
+                    <select id="accesorios" name="accesorios" multiple size="5" tabindex="18">
+                        <option>Ruedines</option>
+                        <option>Hinchadores</option>
+                        <option>Rodillos</option>
+                        <option>Bomba de aire</option>
+                        <option>Alforja</option>
+                        <option>Silla portabebés</option>
+                    </select>
+                    <small>Mantén Ctrl (Cmd) para seleccionar múltiples.</small>
+                </div>
+
+                <div class="campo">
+                    <label for="marca">¿Qué marca era?:</label>
+                    <input type="text" id="marca" name="marca" list="lista_marcas"
+                        placeholder="Escribe o selecciona una marca" tabindex="19">
+                    <datalist id="lista_marcas">
+                        <option>specialized</option>
+                        <option>trek</option>
+                        <option>merida</option>
+                        <option>scott</option>
+                        <option>giant</option>
+                        <option>cube</option>
+                        <option>lapierre</option>
+                        <option>orbea</option>
+                        <option>cannondale</option>
+                        <option>bmc</option>
+                        <option>canyon</option>
+                        <option>look</option>
+                        <option>protek</option>
+                        <option>megamo</option>
+                        <option>pinarello</option>
+                        <option>bianchi</option>
+                        <option>bh</option>
+                        <option>factor</option>
+                        <option>ghost</option>
+                        <option>cervélo</option>
+                        <option>argon</option>
+                    </datalist>
+                </div>
+            </fieldset>
+
+            <div class="botones">
+                <button type="reset" tabindex="20">Limpiar formulario</button>
+                <button type="submit" tabindex="21">Registrar robo</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Pequeño script para mostrar el valor del range en tiempo real -->
+    <script>
+        const rangePrecio = document.getElementById('precio');
+        const outputPrecio = document.getElementById('valor_precio');
+        if (rangePrecio && outputPrecio) {
+            rangePrecio.addEventListener('input', function () {
+                outputPrecio.value = this.value;
+            });
+        }
+    </script>
+</body>
+
+</html>
