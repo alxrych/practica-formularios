@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     background: #f5f7fc;
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
@@ -20,7 +21,7 @@ main {
     padding: 1.5rem;
     background: white;
     border-radius: 24px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+
 }
 
 h1 {
@@ -39,7 +40,7 @@ h1 {
     margin-bottom: 3rem;
     padding: 1.5rem;
     border: 1px solid #e4e9f2;
-    transition: box-shadow 0.2s;
+  
 }
 
 .formulario:last-child {
@@ -74,32 +75,19 @@ legend {
 }
 
 /* Etiquetas */
-.campo > label {
+.campo>label {
     flex: 0 0 180px;
     font-weight: 600;
     padding-top: 0.6rem;
     color: #2c3e4e;
 }
 
-/* Inputs, selects, textarea comunes */
-.campo input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]),
-.campo select,
-.campo textarea {
-    flex: 1;
-    padding: 0.6rem 0.8rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 14px;
-    font-size: 0.95rem;
-    background: #fff;
-    transition: 0.2s;
-}
 
 .campo input:focus,
 .campo select:focus,
 .campo textarea:focus {
     outline: none;
     border-color: #2c7a4d;
-    box-shadow: 0 0 0 3px rgba(44, 122, 77, 0.2);
 }
 
 /* Radio y checkbox */
@@ -124,35 +112,17 @@ legend {
 .checkbox {
     align-items: center;
 }
+
 .checkbox label {
     flex: 0 0 180px;
     padding-top: 0;
 }
+
 .checkbox input {
     width: 1.2rem;
     height: 1.2rem;
 }
 
-/* Rango de precio */
-.rango .control-rango {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.rango input[type="range"] {
-    flex: 2;
-    min-width: 180px;
-}
-.rango output {
-    background: #eef2fa;
-    padding: 0.2rem 0.7rem;
-    border-radius: 30px;
-    font-weight: 600;
-    min-width: 55px;
-    text-align: center;
-}
 
 /* Color picker */
 input[type="color"] {
@@ -167,7 +137,8 @@ input[type="color"] {
 select[multiple] {
     max-height: 140px;
 }
-select[multiple] + small {
+
+select[multiple]+small {
     flex: 1 0 100%;
     margin-left: 180px;
     font-size: 0.75rem;
@@ -204,7 +175,7 @@ button {
 button[type="submit"] {
     background: #0f3b2c;
     color: white;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 button[type="submit"]:hover {
@@ -216,24 +187,3 @@ button[type="reset"]:hover {
     background: #e2e8f0;
 }
 
-/* Responsive: en pantallas pequeñas las etiquetas arriba */
-@media (max-width: 700px) {
-    main {
-        margin: 1rem;
-        padding: 1rem;
-    }
-    .campo {
-        flex-direction: column;
-        gap: 0.3rem;
-    }
-    .campo > label {
-        flex: auto;
-        padding-top: 0;
-    }
-    select[multiple] + small {
-        margin-left: 0;
-    }
-    .radio-group .opciones-radio {
-        margin-left: 0;
-    }
-}

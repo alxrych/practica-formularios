@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club de Ciclismo - Registro y Denuncia de Robo</title>
+    <title>Club de ciclismo - Registro y denuncia de robo</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <main>
-        <h1>Club de Ciclismo</h1>
+        <h1>Club de ciclismo</h1>
 
         <!-- FORMULARIO 1: REGISTRARSE EN EL CLUB -->
         <form action="#" method="post" class="formulario">
@@ -43,11 +43,6 @@
                     </div>
                 </div>
 
-                <div class="campo checkbox">
-                    <label for="me_siento">Me siento del club:</label>
-                    <input type="checkbox" id="me_siento" name="me_siento" value="si" tabindex="7">
-                </div>
-
                 <div class="campo">
                     <label for="sobre_ti">Escribe algo sobre ti:</label>
                     <textarea id="sobre_ti" name="sobre_ti" rows="3"
@@ -75,6 +70,8 @@
             </div>
         </form>
 
+
+
         <!-- FORMULARIO 2: REGISTRAR EL ROBO DE LA BICICLETA -->
         <form action="#" method="post" class="formulario">
             <fieldset>
@@ -92,16 +89,12 @@
 
                 <div class="campo">
                     <label for="color_bici">Color de la bicicleta:</label>
-                    <input type="color" id="color_bici" name="color_bici" value="#3366cc" tabindex="15">
+                    <input type="color" id="color_bici" name="color_bici" value="#3366cc" tabindex="15" required>
                 </div>
 
                 <div class="campo rango">
                     <label for="precio">Rango de precio (€):</label>
-                    <div class="control-rango">
-                        <input type="range" id="precio" name="precio" min="0" max="5000" step="50" value="1000"
-                            tabindex="16">
-                        <output id="valor_precio">1000</output> €
-                    </div>
+                    <input type="text" id="precio" name="precio" min="0" max="5000" value="1000" tabindex="16" required>
                 </div>
 
                 <div class="campo">
@@ -128,10 +121,9 @@
 
                 <div class="campo">
                     <label for="accesorios">Accesorios (puede elegir varios):</label>
-                    <select id="accesorios" name="accesorios" multiple size="5" tabindex="18">
+                    <select id="accesorios" name="accesorios" multiple size="5" tabindex="18" required>
                         <option>Ruedines</option>
                         <option>Hinchadores</option>
-                        <option>Rodillos</option>
                         <option>Bomba de aire</option>
                         <option>Alforja</option>
                         <option>Silla portabebés</option>
@@ -142,7 +134,7 @@
                 <div class="campo">
                     <label for="marca">¿Qué marca era?:</label>
                     <input type="text" id="marca" name="marca" list="lista_marcas"
-                        placeholder="Escribe o selecciona una marca" tabindex="19">
+                        placeholder="Escribe o selecciona una marca" tabindex="19" required>
                     <datalist id="lista_marcas">
                         <option>specialized</option>
                         <option>trek</option>
@@ -176,16 +168,7 @@
         </form>
     </main>
 
-    <!-- Pequeño script para mostrar el valor del range en tiempo real -->
-    <script>
-        const rangePrecio = document.getElementById('precio');
-        const outputPrecio = document.getElementById('valor_precio');
-        if (rangePrecio && outputPrecio) {
-            rangePrecio.addEventListener('input', function () {
-                outputPrecio.value = this.value;
-            });
-        }
-    </script>
+
 </body>
 
 </html>
